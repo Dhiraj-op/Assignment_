@@ -6,76 +6,83 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:background="@color/pink"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="4dp"
-    app:cardBackgroundColor="#EDEBEB">
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp"
+    app:cardBackgroundColor="#FFFFFF">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:padding="16dp">
+
+<ImageView
+    android:id="@+id/company_logo"
+    android:layout_width="56dp"
+android:layout_height="56dp"
+android:src="@drawable/logo"
+android:background="?attr/selectableItemBackgroundBorderless"
+android:scaleType="centerCrop"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintBottom_toBottomOf="parent" />
+
+<LinearLayout
+    android:id="@+id/text_container"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginStart="16dp"
+    app:layout_constraintStart_toEndOf="@id/company_logo"
+    app:layout_constraintEnd_toStartOf="@id/save_btn"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent">
+
+    <TextView
+        android:id="@+id/job_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:text="Title"
+        android:textColor="#1E3A8A"
+        android:textSize="18sp"
 
-        <ImageView
-            android:id="@+id/company_logo"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:src="@drawable/logo"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+    android:layout_marginBottom="2dp" />
 
-        <LinearLayout
-            android:id="@+id/text_container"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginStart="16dp"
-            app:layout_constraintStart_toEndOf="@id/company_logo"
-            app:layout_constraintEnd_toStartOf="@id/save_btn"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+    <TextView
+        android:id="@+id/job_company"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="Company"
+        android:textColor="#64748B"
+        android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/job_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Title"
-                android:textColor="#1E3A8A"
-                android:textSize="16sp" />
+    <TextView
+        android:id="@+id/job_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Full-time • Senior level • $260K/year"
+        android:textColor="#94A3B8"
+        android:textSize="12sp" />
+</LinearLayout>
 
-            <TextView
-                android:id="@+id/job_company"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:fontFamily="@font/montserrat_medium"
-                android:text="Company"
-                android:textColor="#64748B"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/job_details"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/montserrat"
-                android:text="Full-time • Senior level • $260K/year"
-                android:textColor="#94A3B8"
-                android:textSize="12sp" />
-        </LinearLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/save_btn"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            app:icon="@drawable/bookmark_icon"
-            app:iconSize="24dp"
-            app:iconTint="@color/dark_blue"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+<com.google.android.material.button.MaterialButton
+    android:id="@+id/save_btn"
+    android:layout_width="48dp"
+    android:layout_height="48dp"
+    app:icon="@drawable/bookmark_icon"
+    app:iconSize="24dp"
+    app:iconTint="@color/dark_blue"
+    android:background="?attr/selectableItemBackgroundBorderless"
+    app:rippleColor="@color/pink"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintBottom_toBottomOf="parent"
+style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+app:shapeAppearanceOverlay="@style/ShapeAppearance.MaterialComponents.SmallComponent"
+app:strokeColor="@color/dark_blue"
+app:strokeWidth="1dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>

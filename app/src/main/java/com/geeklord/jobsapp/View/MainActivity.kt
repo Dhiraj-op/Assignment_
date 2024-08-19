@@ -58,10 +58,10 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.apply {
             setupWithNavController(navController)
 
-            // Optional: Set default selected item
+
             selectedItemId = JOBS_ITEM
 
-            // Optional: Handle manual item selection if needed
+
             setOnNavigationItemSelectedListener { menuItem ->
                 when (menuItem.itemId) {
                     R.id.jobsFragment -> {
